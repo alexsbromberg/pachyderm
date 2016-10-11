@@ -52,6 +52,16 @@ func NewAmazonClient(bucket string, id string, secret string, token string,
 	return newAmazonClient(bucket, id, secret, token, region)
 }
 
+//TODO
+// NewSwiftClient creates a swift client with the following credentials:
+//   userName  - Swift user name
+//   apiKey    - Swift api key
+//   authUrl   - Swifth authentication url
+//   container - Swift container name
+func NewSwiftClient(userName string, apiKey string, authUrl string, container string) (Client, error) {
+	return newSwiftClient(userName, apiKey, authUrl, container)
+}
+
 // NewExponentialBackOffConfig creates an exponential back-off config with
 // longer wait times than the default.
 func NewExponentialBackOffConfig() *backoff.ExponentialBackOff {
